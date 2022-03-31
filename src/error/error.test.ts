@@ -12,7 +12,7 @@ const mockResponse = (mock: 'status' | 'message'): jest.Mock<Response> => jest.f
 })
 
 const mockError = (message: string, status: number): Response => errorHandler(new AppError(message, status), mockReq as Request, mockRes as Response)
-
+console.log(process.env['REDIS_URL'])
 describe('ERROR TESTS', () => {
   beforeEach(() => {
     mockRes = {
